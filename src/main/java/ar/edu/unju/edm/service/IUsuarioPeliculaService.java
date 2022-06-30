@@ -10,8 +10,8 @@ import ar.edu.unju.edm.model.UsuarioPelicula;
 public interface IUsuarioPeliculaService {
 	public UsuarioPelicula nuevoUsuarioPelicula();
 	public void guardarUsuarioPelicula(UsuarioPelicula usuarioPelicula);
-	public void eliminarUsuarioPelicula(Integer id);
+	public void eliminarUsuarioPelicula(Integer id) throws Exception;
 	public void modificarUsuarioPelicula(UsuarioPelicula usuarioPelicula);
 	public List<UsuarioPelicula> listarUsuariosPelicula(); 
-	public UsuarioPelicula buscarUsuarioPelicula(Integer id);         
+	public UsuarioPelicula buscarUsuarioPelicula(Integer id) throws Exception;         
 }
