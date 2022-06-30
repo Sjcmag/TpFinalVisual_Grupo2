@@ -22,9 +22,17 @@ public class UsuarioPelicula {
 	@JoinColumn(name="id")
 	private Usuario usuario;
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="idCurso")
+	@JoinColumn(name="idPelicula")
 	private Pelicula pelicula;
 	private LocalDate fechadeventa;
+	private Boolean estado;
+	
+	public Boolean getEstado() {
+		return estado;
+	}
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
 	public UsuarioPelicula() {
 		// TODO Auto-generated constructor stub
 	}
