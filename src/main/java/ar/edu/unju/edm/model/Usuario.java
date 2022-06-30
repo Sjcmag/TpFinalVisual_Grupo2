@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -36,9 +37,25 @@ public class Usuario {
   
 
 	 
+	public Integer getDni() {
+		return dni;
+	}
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
 	@Max (value = 99999999, message="DNI debe ser menor que 99999999")
 	@Min(value = 1000000, message="DNI debe ser mayor que 1000000")
  	private Integer dni;
+	
+	@NotBlank
+	private String tipo;
+	
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
@@ -65,13 +82,8 @@ public class Usuario {
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
 	}
-	public Integer getDni() {
-		return dni;
-	}
-	public void setDni(Integer dni) {
-		this.dni = dni;
-	}
-
+	
+	
 	public String getEmail() {
 		return email;
 	}
