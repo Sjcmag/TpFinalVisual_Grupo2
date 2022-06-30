@@ -64,7 +64,7 @@ private static final Log SANTI = LogFactory.getLog(UsuarioController.class);
 		modelView.addObject("formCursoErrorMessage", "Curso guardado correctamente");
 		modelView.addObject("unaPeli", peliService.nuevoPeli());
 		modelView.addObject("listadoPeliculas", peliService.listarPelicula());
-		modelView.setViewName("listadoPeliculas");
+		modelView.setViewName("cargarPelicula");
 		modelView.addObject("editMode", false);
 		return modelView;
 		}
@@ -116,7 +116,7 @@ private static final Log SANTI = LogFactory.getLog(UsuarioController.class);
 			vista.addObject("editMode",true);
 			return vista;
 		}
-		ModelAndView vista= new ModelAndView("listadoPeliculas");
+		ModelAndView vista= new ModelAndView("/listadoPeliculas");
 		vista.addObject("listadoPeliculas", peliService.listarPelicula());		
 		vista.addObject("formCursoErrorMessage", "Curso guardado Correctamente");
 		return vista;
