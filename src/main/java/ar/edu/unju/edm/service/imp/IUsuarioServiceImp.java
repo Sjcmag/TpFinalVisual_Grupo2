@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.edm.controller.UsuarioController;
@@ -26,8 +27,12 @@ public class IUsuarioServiceImp implements IUsuarioService{
 	public void guardarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		usuario.setEstado(true);
+		//usuario.setTipo("CLIENTE");
 	//	lista.getListado().add(usuario);
-		usuario.setId(lista.getListado().size()+1);
+		//usuario.setId(lista.getListado().size()+1);
+		String passwd= usuario.getContrasena();
+		BCryptPasswordEncoder coder =new BCryptPasswordEncoder();
+		usuario.setContrasena(coder.encode(passwd));
 		usuarioRepository.save(usuario);
 	}
 
