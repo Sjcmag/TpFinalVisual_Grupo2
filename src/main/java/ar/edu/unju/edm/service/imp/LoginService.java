@@ -21,6 +21,7 @@ public class LoginService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		//busqueda de usuario
+		System.out.println("kkkkkkkkkkkkkkkk "+email);
 		Usuario usarioEncontrado =usuariorepository.findByEmail(email).orElseThrow(()->new UsernameNotFoundException("Usuario Invalido"));
 		//defini autoruzaiones 
 		List <GrantedAuthority> tiposPerfiles = new ArrayList<>();
