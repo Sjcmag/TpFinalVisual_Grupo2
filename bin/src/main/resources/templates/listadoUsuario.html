@@ -1,22 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    >
-
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<title>Listado Pelicula</title>
-
-<link th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}"
-	rel="stylesheet" type="text/css" />
-<link th:rel="stylesheet"
-	th:href="@{/webjars/font-awesome/6.1.0/css/all.css}" />
+<meta charset="UTF-8">
+<title>listado</title>
+<link th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/miEstilo.css}" rel="stylesheet" type="text/css">
+<link th:rel="stylesheet" th:href="@{/webjars/font-awesome/6.1.0/css/all.css}" />
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/index">CINEBOB</a>
+    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,36 +24,39 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       </div>
     </div>
   </div>
-</nav>      
-	<div class="container">
-<div class="alert-danger text-center" th:if="${formCursoErrorMessage}" th:text="${formUsuarioErrorMessage}">Name Error</div>
+</nav>      <a class="nav-link" href="/listarCursos">Lista Curso</a>
+      </div>
+    </div>
+  </div>
+</nav>
+ <div class="container">
+<div class="alert-danger text-center" th:if="${formUsuarioErrorMessage}" th:text="${formUsuarioErrorMessage}">Name Error</div>
 		<section>
 			<div class="table-responsive">
 				<table class="table table-sm table-dark table-hover">
-					<caption class="table-caption">List of Courses</caption>
+					<caption class="table-caption">List of users</caption>
 					<thead>
 						<tr class="text-center">
-							<th scope="col">id</th>
 							<th scope="col">nombre</th>
-							<th scope="col">Tipo de Pelicula</th>
-							<th scope="col">Descripcion</th>
-							<th scope="col">imagen</th>
+							<th scope="col">Apellido</th>
+							<th scope="col">Email</th>
+							<th scope="col">dni</th>
 							<th scope="col">Edicion</th>
 						</tr>
 					</thead>
 					<tbody class="table-group-divider">
 					
-						<tr th:each="c:${listaPelicula}" class="text-center">
-							<td th:text="${c.idPelicula}"></td>
-							<td th:text="${c.nombre}"></td>
-							<td th:text="${c.tipoPelicula}"></td>
-							<td th:text="${c.descripcion}"></td>
-							<td><img th:src="${'data:image/png;base64,'+c.imagen}" alt="" /></td>
-								<td><a class="btn btn-warning" href="#"
-								th:href="@{'/editarPelicula/'+${c.idPelicula}}">Editar</a> 
-								<a class="link-eliminar" href="#" th:onclick="'javascript:confirmarEliminar(\''+${c.idPelicula}+'\');'">
+						<tr th:each="u :${ListaUsuario}" class="text-center">
+							<td th:text="${u.nombre}"></td>
+							<td th:text="${u.apellido}"></td>
+							<td th:text="${u.Email}"></td>
+							<td th:text="${u.dni}"></td>
+							<td><a class="btn btn-warning" href="#"
+								th:href="@{'/editarUsuario/'+${u.id}}">Editar</a> 
+								<a class="link-eliminar" href="#" th:onclick="'javascript:confirmarEliminar(\''+${u.id}+'\');'">
 								<i class="btn btn-secondary fa fa-trash-alt"></i></a>
 							</td>
+
 						</tr>
 					</tbody>
 				</table>
@@ -130,9 +127,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
 		function eliminarUsuario() {
 			var id = $("#identificadorDeUsuario").val();
-			window.location = "/deletePelicula/" + id;
+			window.location = "/eliminarUsuario/" + id;
 		}
 	</script>
-</body>
 </body>
 </html>
