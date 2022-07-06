@@ -31,7 +31,7 @@ public class LoginService implements UserDetailsService{
 		UserDetails userEnsesion =  new User(email,usarioEncontrado.getContrasena(),tiposPerfiles);
 		
 		
-		return null;
+		return userEnsesion;
 	}
   
 	

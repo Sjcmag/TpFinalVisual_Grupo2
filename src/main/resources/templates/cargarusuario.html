@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <link th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/loginstilo.css}" />
 <title>cargarusuario</title>
+
 </head>
-<body>
+<body class="body-usuario">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/index">CINEBOB</a>
@@ -24,8 +26,9 @@
   </div>
 </nav>      
 <div class="container">
-
-<div th:insert="/layouts/header :: header"></div>
+<h1 class="mb-0">Crear <span class="text-primary">Usuario</span></h1>
+<br>
+<section>
 <form th:object="${usuario}" th:action="${editMode}?  @{/editarUsuario} : @{/guardarusuario}" method="post">  
   <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{contrasena}">
   <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{estado}">
@@ -75,8 +78,38 @@
   <a class="btn btn-light" th:href="@{/}">Volver</a>
 </form>
 </div>
+</section>
 <script th:src="@{/webjars/bootstrap/5.0.0/js/bootstrap.min.js}"
 		type="text/javascript"
 		src="webjars/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+		
+		<footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="./img/pngwing.com.png" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Gracias por confiar en nosotros</h2>
+                <p>Un buen vino es como una buena película: dura un instante y te deja en la boca un sabor a gloria; es nuevo en cada sorbo y , como ocurre con las películas, nace y renace en cada saboreador.</p>
+                <p></p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>GRUPO02</b> Calapeña-Colque-Gomez-Gaspar</small>
+        </div>
+    </footer>
 </body>
 </html>
