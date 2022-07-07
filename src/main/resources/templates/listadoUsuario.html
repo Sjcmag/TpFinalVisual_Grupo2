@@ -6,9 +6,15 @@
 <link th:href="@{/webjars/bootstrap/5.0.0/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <link th:href="@{/css/miEstilo.css}" rel="stylesheet" type="text/css">
 <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/6.1.0/css/all.css}" />
+<link th:rel="stylesheet" type="text/css" th:href="@{/css/loginstilo.css}" />
+ <!--Iconos-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div th:insert="/layouts/header2 :: header2"></div> 
+
+
  <div class="container">
 <div class="alert-danger text-center" th:if="${formUsuarioErrorMessage}" th:text="${formUsuarioErrorMessage}">Name Error</div>
 		<section>
@@ -110,5 +116,43 @@
 			window.location = "/eliminarUsuario/" + id;
 		}
 	</script>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="./img/pngwing.com.png" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>Gracias por confiar en nosotros</h2>
+                <p>Un buen vino es como una buena película: dura un instante y te deja en la boca un sabor a gloria; es nuevo en cada sorbo y , como ocurre con las películas, nace y renace en cada saboreador.</p>
+                <p></p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>GRUPO02</b> Calapeña-Colque-Gomez-Gaspar</small>
+        </div>
+    </footer>
 </body>
 </html>
