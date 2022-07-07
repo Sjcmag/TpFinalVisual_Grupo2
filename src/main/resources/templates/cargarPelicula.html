@@ -14,25 +14,11 @@
 <body class="body-usuario">
 
 	
-	<!--   -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/index">CINEBOB</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/index">Home</a>
-        <a class="nav-Link" href="/otroUsuario">Cargar Usuario</a>
-        <a class="nav-link" href="/listadoUsuario">Lista Usuario</a>
-         <a class="nav-Link" href="/nuevoPeli">Cargar Pelicula</a>
-        <a class="nav-link" href="/listadoPeliculas">Lista Pelicula</a>
-        <a class="nav-link" th:href="@{/logout}">Log out</a>
-      </div>
-    </div>
-  </div>
-</nav>      
+
+    <div th:insert="/layouts/header2 :: header2"></div>  
+
+
+ 
 	<div class="container">
 		<div class="alert alert-success alert-dismissible fade show row"
 			role="alert" th:if="${formCursoErrorMessage}">
@@ -140,7 +126,7 @@
             </div>
             <div class="box">
                 <h2>Gracias por confiar en nosotros</h2>
-                <p>Un buen vino es como una buena película: dura un instante y te deja en la boca un sabor a gloria; es nuevo en cada sorbo y , como ocurre con las películas, nace y renace en cada saboreador.</p>
+                <p>Un buen vino es como una buena pelÃ­cula: dura un instante y te deja en la boca un sabor a gloria; es nuevo en cada sorbo y , como ocurre con las pelÃ­culas, nace y renace en cada saboreador.</p>
                 <p></p>
             </div>
             <div class="box">
@@ -154,7 +140,7 @@
             </div>
         </div>
         <div class="grupo-2">
-            <small>&copy; 2022 <b>GRUPO02</b> Calapeña-Colque-Gomez-Gaspar</small>
+            <small>&copy; 2022 <b>GRUPO02</b> CalapeÃ±a-Colque-Gomez-Gaspar</small>
         </div>
     </footer>
 </body>

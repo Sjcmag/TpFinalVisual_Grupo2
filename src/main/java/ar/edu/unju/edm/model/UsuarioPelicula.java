@@ -2,6 +2,7 @@ package ar.edu.unju.edm.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,10 @@ public class UsuarioPelicula {
 	private Pelicula pelicula;
 	private LocalDate fechadeventa;
 	private Boolean estado;
-	
+	@Column
+	private Integer valoracion_user;
+	@Column
+	private String comentario;
 	public Boolean getEstado() {
 		return estado;
 	}

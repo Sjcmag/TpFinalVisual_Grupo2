@@ -10,30 +10,11 @@
  <!--Iconos-->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
-<body class="body-usuario">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/index">CINEBNOB</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/index">Home</a>
-        <a class="nav-Link" href="/otroUsuario">Cargar Usuario</a>
-        <a class="nav-link" href="/listadoUsuario">Lista Usuario</a>
-         <a class="nav-Link" href="/nuevoPeli">Cargar Pelicula</a>
-        <a class="nav-link" href="/listadoPeliculas">Lista Pelicula</a>
-        <a class="nav-link" th:href="@{/logout}">Log out</a>
-      </div>
-    </div>
-  </div>
-</nav>      
-      </div>
-    </div>
-  </div>
-</nav>
-<br>
+
+<body>
+    <div th:insert="/layouts/header2 :: header2"></div> 
+
+
  <div class="container">
 <div class="alert-danger text-center" th:if="${formUsuarioErrorMessage}" th:text="${formUsuarioErrorMessage}">Name Error</div>
 		<section>

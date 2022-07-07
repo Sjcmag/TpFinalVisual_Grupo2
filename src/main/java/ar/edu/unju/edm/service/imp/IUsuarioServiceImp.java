@@ -99,4 +99,10 @@ public class IUsuarioServiceImp implements IUsuarioService{
 		return usuarioEncontrado;
 	}
 
+	@Override
+	public Usuario encontrarConCorreo(String email) throws Exception {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findByEmail(email).orElseThrow(()->new Exception("El turista No Existe")); 
+	}
+
 }
