@@ -1,5 +1,7 @@
 package ar.edu.unju.edm.controller;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
 import org.apache.commons.logging.Log;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.model.UsuarioPelicula;
 import ar.edu.unju.edm.service.IPeliculaService;
 import ar.edu.unju.edm.service.IUsuarioPeliculaService;
@@ -28,11 +31,14 @@ public class UsuarioPeliculaController {
 	@Autowired
 	IPeliculaService peliculaService;
 	@GetMapping("/nuevaTicket")
-	public ModelAndView addInscripcion() {
+	public ModelAndView addInscripcion(Principal principal) throws Exception {
+		Usuario existente = usuarioService.encontrarConCorreo(principal.getName());
+		
 	GRUPO2.info("ingresando al metodo: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
 		ModelAndView modelView = new ModelAndView("ticket");
 		modelView.addObject("unTicket", usuarioPeliculaService.nuevoUsuarioPelicula());
-		modelView.addObject("usuarios", usuarioService.mostrarUsuario());
+		//modelView.addObject("usuarios", usuarioService.mostrarUsuario());
+		modelView.addObject("usuarios", existente);
 		modelView.addObject("pelicula", peliculaService.listarPelicula());
 		return modelView;
 	}
@@ -59,7 +65,9 @@ public class UsuarioPeliculaController {
 		
 		modelView.addObject("formUsuarioErrorMessage", "Usuario guardado correctamente");
 		modelView.addObject("unTicket", usuarioPeliculaService.nuevoUsuarioPelicula());
-		modelView.setViewName("ticket");
+		//modelView.setViewName("ticket");
+		modelView.addObject("listaTickets", usuarioPeliculaService.listarUsuariosPelicula());
+		modelView.setViewName("listadoTickets");
 		return modelView;
 		}
 	@GetMapping("/listadoTickets")	
