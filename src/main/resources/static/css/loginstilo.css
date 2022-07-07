@@ -366,4 +366,20 @@ label{
 	text-transform: uppercase;
 	font-weight: bold;
 }
-
+.banner-video {
+    background-image: url(https://www.clarin.com/img/2022/05/28/panoramica-de-la-sala____uvePkaYS_720x0__1.jpg);
+    padding: 200px 0;
+    position: relative ;
+    text-align: center;
+}
+.banner-video .play{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+.banner-video1 {
+    background-image: url(imagenes/BANNER2.jpg);
+    padding: 200px 0;
+    position: relative ;
+    text-align: center;
+}
