@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import ar.edu.unju.edm.model.Pelicula;
-import ar.edu.unju.edm.model.UserPeliculaValor;
 import ar.edu.unju.edm.model.Usuario;
 import ar.edu.unju.edm.service.IPeliculaService;
 import ar.edu.unju.edm.service.IUsuarioService;

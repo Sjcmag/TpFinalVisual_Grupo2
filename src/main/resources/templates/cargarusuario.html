@@ -10,25 +10,15 @@
 <body class="body-usuario">
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/index">CINEBOB</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/index">Home</a>
-        <a class="nav-Link" href="/otroUsuario">Cargar Usuario</a>
-        <a class="nav-link" href="/listadoUsuario">Lista Usuario</a>
-         <a class="nav-Link" href="/nuevoPeli">Cargar Pelicula</a>
-        <a class="nav-link" href="/listadoPeliculas">Lista Pelicula</a>
-        <a class="nav-link" th:href="@{/logout}">Log out</a>
-      </div>
-    </div>
-  </div>
-</nav>      
-
+	<div class="container">
+		<div class="alert alert-success alert-dismissible fade show row"
+			role="alert" th:if="${formCursoErrorMessage}">
+			<label th:text="${formCursoErrorMessage}"></label>
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+	</div>
+ 
 <div class="container">
 <h1 class="mb-0">Crear <span class="text-primary">Usuario</span></h1>
 <br>
@@ -38,6 +28,7 @@
   <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{estado}">
   <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{dni}">
     <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{id}">
+     <input type="hidden" class="form-control" th:if="${editMode}" th:field="*{tipo}">
   
   <div class="mb-3">
        <label for="nombre" class="form-label">Nombre</label>
@@ -79,7 +70,7 @@
 									</div>
  
   <button type="submit" class="btn btn-primary" ><span th:text="${editMode}?'Modificar':'Guardar'"></span>  </button>
-  <a class="btn btn-light" th:href="@{/}">Volver</a>
+  <a class="btn btn-light" th:href="@{/login}">Volver</a>
 </form>
 </div>
 </section>

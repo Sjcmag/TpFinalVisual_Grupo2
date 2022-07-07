@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,12 +26,10 @@ public class UsuarioPelicula {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="idPelicula")
 	private Pelicula pelicula;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechadeventa;
 	private Boolean estado;
-	@Column
-	private Integer valoracion_user;
-	@Column
-	private String comentario;
+	
 	public Boolean getEstado() {
 		return estado;
 	}
