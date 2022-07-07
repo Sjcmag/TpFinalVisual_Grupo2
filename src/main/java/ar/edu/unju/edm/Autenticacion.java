@@ -41,11 +41,11 @@ public class Autenticacion implements AuthenticationSuccessHandler {
 			 }
 		 }
 		 if(tipoCliente) {
-			 redirectStrategy.sendRedirect(request, response, "/listadoPeliculas");
+			 redirectStrategy.sendRedirect(request, response, "/formulario/pelicula");
 		 }
 		 else {
 			 if(tipoAdmin) {
-				 redirectStrategy.sendRedirect(request, response, "/cargarPelicula");
+				 redirectStrategy.sendRedirect(request, response, "/listadoUsuario");
 			 }
 		 }
 	}

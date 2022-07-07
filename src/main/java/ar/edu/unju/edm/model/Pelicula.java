@@ -1,13 +1,16 @@
 package ar.edu.unju.edm.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
@@ -45,6 +48,30 @@ public class Pelicula {
 		@Column(name = "prod_imagen", columnDefinition = "LONGBLOB")
 		private String imagen;
 		private Boolean estado;
+		@Column
+		private Integer numeroDeComentarios=0;
+		
+		/*
+		 * 
+		@OneToMany(mappedBy = "poi", cascade = CascadeType.ALL)
+		private List<UserPeliculaValor> valoracionesComentarios;
+		
+        public List<UserPeliculaValor> getValoracionesComentarios() {
+			return valoracionesComentarios;
+		}
+
+		public void setValoracionesComentarios(List<UserPeliculaValor> valoracionesComentarios) {
+			this.valoracionesComentarios = valoracionesComentarios;
+		}*/
+
+public Integer getNumeroDeComentarios() {
+			return numeroDeComentarios;
+		}
+
+		public void setNumeroDeComentarios(Integer numeroDeComentarios) {
+			this.numeroDeComentarios = numeroDeComentarios;
+		}
+
 public Pelicula() {
 	// TODO Auto-generated constructor stub
 }
